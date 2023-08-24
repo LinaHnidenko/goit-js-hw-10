@@ -87,10 +87,12 @@ function markupCatInfo(data) {
   const { breeds, url } = data[0];
   const { name, temperament, description } = breeds[0];
   const catInfo = `<img src="${url}" alt="${name}" width="400"/>
-      <h1>${name}</h1>
+  <div class="cat-desc">
+      <h1 class="cat-name">${name}</h1>
       <p>${description}</p>
        <h2>Temperament:</h2>
-      <p>${temperament}</p>`;
+      <p>${temperament}</p>
+      </div>`;
 
   info.innerHTML = catInfo;
 }

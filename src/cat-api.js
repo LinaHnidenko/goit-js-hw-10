@@ -17,6 +17,9 @@ function fetchBreeds() {
     loader.classList.remove('is-hidden');
   });
 }
+function add() {
+  console.log('hello');
+}
 
 function fetchCatByBreed(breedId) {
   return fetch(

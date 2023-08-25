@@ -15,7 +15,6 @@ body {
 .breed-select {
   margin-top: 30px;
   max-width: 350px;
-  background-color: #e6e6fa;
 }
 
 .cat-info {
@@ -64,7 +63,4 @@ img {
   100% {
     width: 100%;
   }
-}
-.ss-main {
-  max-width: 350px;
 }

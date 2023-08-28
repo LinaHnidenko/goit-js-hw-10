@@ -3,12 +3,6 @@ import Notiflix from 'notiflix';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 
-const BASE_URL = 'https://api.thecatapi.com/v1';
-const END_POINT = '/breeds';
-
-const API_KEY =
-  'live_J6tX4pQ53pVA2LLKOlYMMluSMWexkyGGz7jGorivNqc9gJBUIQxBUJTLN7voFAFQ';
-
 const selectBreed = document.querySelector('.breed-select');
 const info = document.querySelector('.cat-info');
 const loader = document.querySelector('.loader');

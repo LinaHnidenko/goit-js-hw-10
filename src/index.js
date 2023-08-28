@@ -19,20 +19,6 @@ selectBreed.addEventListener('change', onChange);
 loader.classList.add('is-hidden');
 errorText.classList.add('is-hidden');
 
-function fetchBreeds() {
-  return fetch(`${BASE_URL}${END_POINT}?`, {
-    headers: {
-      'x-api-key': `${API_KEY}`,
-    },
-  }).then(response => {
-    if (!response.ok) {
-      throw new Error(response.statusText);
-    }
-    return response.json();
-    loader.classList.remove('is-hidden');
-  });
-}
-
 fetchBreeds()
   .then(data => {
     selectBreed.insertAdjacentHTML('beforeend', createMarkup(data));
@@ -71,17 +57,6 @@ function onChange(evt) {
     });
 }
 
-function fetchCatByBreed(breedId) {
-  return fetch(
-    `${BASE_URL}/images/search?breed_ids=${breedId}&api_key=${API_KEY}`
-  ).then(resp => {
-    if (!resp.ok) {
-      throw new Error(resp.statusText);
-    }
-    return resp.json();
-  });
-}
-
 function markupCatInfo(data) {
   loader.classList.add('is-hidden');
   const { breeds, url } = data[0];
@@ -96,4 +71,3 @@ function markupCatInfo(data) {
 
   info.innerHTML = catInfo;
 }
-export { fetchBreeds, createMarkup };
